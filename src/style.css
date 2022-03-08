@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root {
+    --alta-primary-color: #424242;
+    --alta-font-color: #424242;
+    --alta-border-radius: 0.25rem;
+    --alta-border: 1px solid #dfdfdf;
+    --alta-progress-value: #abe2bb;
+    --alta-progress-background: #f3f3f3;
+    --alta-focus-color: #730bff70;
+  }
+  
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--alta-font-color);
+    font-weight: 400;
+  }

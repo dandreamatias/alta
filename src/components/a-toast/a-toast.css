@@ -1,0 +1,86 @@
+.toast {
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: var(--alta-border-radius);
+  border: var(--alta-border);
+  background-color: white;
+  display: block;
+  box-shadow: rgb(17 17 26 / 10%) 0px 8px 24px, rgb(17 17 26 / 10%) 0px 16px 56px, rgb(17 17 26 / 10%) 0px 24px 80px;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: calc(100% - 4rem);
+  max-width: 20rem;
+  font-size: .825rem;
+  z-index: 10001;
+  animation: appear .2s linear forwards;
+}
+
+@keyframes appear {
+  from {
+    transform: translateY(2rem);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+h3 {
+  margin: 0;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+
+.toast.warn {
+  background-color: #fff9d4;
+}
+
+.toast.error {
+  background-color: #ffcbcb;
+}
+
+.toast.success {
+  background-color: #dafad7;
+}
+
+.toast.info {
+  background-color: #ececec;
+}
+
+.gg-close {
+  box-sizing: border-box;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs, 1));
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 40px
+}
+
+.gg-close::after,
+.gg-close::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  background: currentColor;
+  transform: rotate(45deg);
+  border-radius: 5px;
+  top: 8px;
+  left: 1px
+}
+
+.gg-close::after {
+  transform: rotate(-45deg)
+}

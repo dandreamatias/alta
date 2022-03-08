@@ -1,0 +1,14 @@
+.card {
+  display: block;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
+  border-radius: var(--alta-border-radius);
+  background-color: white;
+}
+
+.header {
+  padding-bottom: 1rem;
+  font-size: 1.25rem;
+}

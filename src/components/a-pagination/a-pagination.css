@@ -1,0 +1,30 @@
+:host {
+  display: block;
+}
+
+.paging-container {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  align-items: center;
+}
+.paging {
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.paging:focus {
+  box-shadow: 0 0 2px 1px var(--alta-focus-color);
+}
+
+.selected {
+  border-radius: var(--alta-border-radius);
+  color: white;
+  background-color: var(--alta-primary-color);
+}

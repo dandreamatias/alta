@@ -1,0 +1,68 @@
+:host {
+  display: block;
+}
+
+.list {
+  box-sizing: border-box;
+  border: var(--alta-border);
+  border-radius: var(--alta-border-radius);
+  list-style: none;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.list li {
+  box-sizing: border-box;
+  padding: 0.75rem;
+  border-bottom: var(--alta-border);
+  display: flex;
+  justify-content: space-between;
+}
+
+.list li:last-child {
+  border: none;
+}
+
+
+/* icons */
+
+.icon-container {
+  width: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.gg-more-vertical-alt {
+  transform: scale(var(--ggs, 1))
+}
+
+.gg-more-vertical-alt,
+.gg-more-vertical-alt::after,
+.gg-more-vertical-alt::before {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 4px;
+  height: 4px;
+  background: currentColor;
+  border-radius: 100%
+}
+
+.gg-more-vertical-alt::after,
+.gg-more-vertical-alt::before {
+  content: "";
+  position: absolute
+}
+
+.gg-more-vertical-alt::after {
+  left: 0;
+  top: 6px
+}
+
+.gg-more-vertical-alt::before {
+  top: -6px;
+  right: 0
+}

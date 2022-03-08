@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+  <title>Stencil Component Starter</title>
+
+  <script type="module" src="/build/alta.esm.js"></script>
+  <script nomodule src="/build/alta.js"></script>
+  <link rel="stylesheet" href="/build/alta.css" />
+  <style>
+    body {
+      padding: 3rem;
+      background-color: #eff3f8;
+      background-color: white;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    hr {
+      margin: 2.5rem 0;
+      display: block;
+      border: none;
+    }
+  </style>
+</head>
+
+<body>
+  <hr>
+  <h2>Avatar</h2>
+  <a-avatar label="M"></a-avatar>
+  <a-avatar label="M" size="l"></a-avatar>
+  <hr>
+  <h2>Breadcrumb</h2>
+  <a-breadcrumb></a-breadcrumb>
+  <hr>
+  <h2>Buttons</h2>
+  <a-button text="button"></a-button>
+  <a-button text="button" type="outline"></a-button>
+  <a-button text="button" type="text"></a-button>
+  <hr>
+  <h2>Card</h2>
+  <hr>
+  <a-card>
+    <h3 slot="header">Card</h3>
+    A basic card
+  </a-card>
+  <hr>
+  <h2>Input</h2>
+  <a-input type="text"></a-input>
+  <hr>
+  <h2>List</h2>
+  <a-list></a-list>
+  <hr>
+  <h2>Modal</h2>
+  <a-button id=open type="outline" text="Open modal"></a-button>
+  <a-modal>
+    <h3 slot="header">Title</h3>
+    <div slot="body">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+      ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    </div>
+    <div slot="footer" style="display: flex; justify-content: space-between;">
+      <a-button id=close text="Cancel" type="outline"></a-button>
+      <a-button text="agree"></a-button>
+    </div>
+  </a-modal>
+  <hr>
+  <h2>Pagination</h2>
+  <a-pagination></a-pagination>
+  <hr>
+  <h2>Panel</h2>
+  <a-panel header="Header">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+  </a-panel>
+  <hr>
+  <h2>Toast</h2>
+  <a-button id=toast type="outline" text="Show"></a-button>
+  <a-toast></a-toast>
+  <hr>
+</body>
+<script>
+  // list
+  document.querySelector('a-list').setAttribute('items', JSON.stringify(['do something', 'buy milk', 'call to info']));
+  document.querySelector('a-breadcrumb').setAttribute('items', JSON.stringify([
+    { label: 'Home', value: '' },
+    { label: 'Documents', value: 'docs' },
+    { label: 'Detail', value: 'docs/12' }
+  ]));
+
+  // modal
+  document.querySelector('a-input').addEventListener('valueChanged', (e) => console.log(e.detail));
+  document.getElementById('close').onclick = () => document.querySelector('a-modal').setAttribute('visible', false);
+  document.getElementById('open').onclick = () => document.querySelector('a-modal').setAttribute('visible', true);
+
+
+  document.getElementById('toast').onclick = () => document.querySelector('a-toast').message = {
+    text: 'this library can be used in any JS framework',
+    title: 'Alta',
+    type: 'success',
+    closable: true,
+    life: 3000
+  };
+
+  document.querySelector('a-breadcrumb').addEventListener('valueChanged', (e) => console.log(e.detail));
+
+
+
+</script>
+
+</html>

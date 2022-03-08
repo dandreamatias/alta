@@ -1,0 +1,68 @@
+:host {
+  display: block;
+}
+
+details {
+  box-sizing: border-box;
+  border: var(--alta-border);
+  border-radius: var(--alta-border-radius);
+}
+
+summary {
+  background-color: #ececec;
+  cursor: pointer;
+  padding: 0.5rem .75rem;
+  font-size: 1.125rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content {
+  padding: .75rem;
+  font-size: 1rem;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #dfdfdf;
+}
+
+
+/* icons */
+
+.gg-math-plus,
+.gg-math-plus::after {
+ display: block;
+ box-sizing: border-box;
+ background: var(--alta-font-color);
+ border-radius: 10px
+}
+
+.gg-math-plus {
+ margin-top: -2px;
+ position: relative;
+ transform: scale(var(--ggs,1));
+ width: 16px;
+ height: 2px
+}
+
+.gg-math-plus::after {
+ content: "";
+ position: absolute;
+ width: 2px;
+ height: 16px;
+ top: -7px;
+ left: 7px
+} 
+
+.gg-math-minus {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  transform: scale(var(--ggs,1));
+  width: 16px;
+  height: 2px;
+  background: var(--alta-font-color);
+  border-radius: 10px
+ } 

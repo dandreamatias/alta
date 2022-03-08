@@ -1,0 +1,44 @@
+:host {
+  display: inline-block
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--alta-font-color);
+  font-weight: 400;
+}
+
+.button {
+  text-transform: uppercase;
+  height: 2.625rem;
+  border: none;
+  padding: 0 1.5rem;
+  font-size: 1rem;
+  border-radius: var(--alta-border-radius);
+  color: white;
+  background-color: var(--alta-primary-color);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+  margin: 0;
+  outline: none;
+}
+
+.button.outline {
+  color: var(--alta-primary-color);
+  background-color: transparent;
+  border: var(--alta-border);
+}
+
+.button.text {
+  color: var(--alta-primary-color);
+  background-color: transparent;
+}
+
+.button:focus {
+  box-shadow: 0 0 2px 1px var(--alta-focus-color);
+}

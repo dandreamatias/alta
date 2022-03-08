@@ -1,0 +1,36 @@
+.breadcrumb {
+  display: flex;
+  gap: 0.75rem;
+  padding: 1rem 0;
+  overflow: overlay;
+}
+.a {
+  text-decoration: none;
+  display: inline-block;
+  padding-left: 1.2rem;
+  position: relative;
+  text-transform: capitalize;
+}
+
+.a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.a::before {
+  content: '/';
+  left: 0;
+  font-size: 0.8rem;
+  position: absolute;
+  line-height: 1rem;
+  top: 0.3rem;
+}
+.a:first-child {
+  padding-left: 0rem;
+}
+.a:first-child::before {
+  content: '';
+}
+.a:last-child {
+  text-decoration: underline;
+}

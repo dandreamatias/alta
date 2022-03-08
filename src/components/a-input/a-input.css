@@ -1,0 +1,23 @@
+:host {
+  display: block;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  width: 100%;
+  border-radius: var(--alta-border-radius);
+  font-size: 1rem;
+  border: var(--alta-border);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  height: 2.625rem;
+}
+
+input:focus {
+  box-shadow: 0 0 2px 1px var(--alta-focus-color);
+}
