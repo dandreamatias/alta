@@ -27,8 +27,9 @@ export namespace Components {
     interface AInputPassword {
     }
     interface AList {
-        "editable": string[] | number[] | string;
         "items": string[] | number[] | string;
+        "label": string;
+        "selectable": boolean;
     }
     interface AModal {
         "visible": boolean;
@@ -42,6 +43,12 @@ export namespace Components {
     interface APanel {
         "header": string;
         "open": boolean;
+    }
+    interface ATable {
+        "columns": { field: string, header: string, sortable?: boolean }[];
+        "data": any[];
+    }
+    interface ATag {
     }
     interface AToast {
         "message": {
@@ -114,6 +121,18 @@ declare global {
         prototype: HTMLAPanelElement;
         new (): HTMLAPanelElement;
     };
+    interface HTMLATableElement extends Components.ATable, HTMLStencilElement {
+    }
+    var HTMLATableElement: {
+        prototype: HTMLATableElement;
+        new (): HTMLATableElement;
+    };
+    interface HTMLATagElement extends Components.ATag, HTMLStencilElement {
+    }
+    var HTMLATagElement: {
+        prototype: HTMLATagElement;
+        new (): HTMLATagElement;
+    };
     interface HTMLAToastElement extends Components.AToast, HTMLStencilElement {
     }
     var HTMLAToastElement: {
@@ -131,6 +150,8 @@ declare global {
         "a-modal": HTMLAModalElement;
         "a-pagination": HTMLAPaginationElement;
         "a-panel": HTMLAPanelElement;
+        "a-table": HTMLATableElement;
+        "a-tag": HTMLATagElement;
         "a-toast": HTMLAToastElement;
     }
 }
@@ -157,8 +178,9 @@ declare namespace LocalJSX {
     interface AInputPassword {
     }
     interface AList {
-        "editable"?: string[] | number[] | string;
         "items"?: string[] | number[] | string;
+        "label"?: string;
+        "selectable"?: boolean;
     }
     interface AModal {
         "visible"?: boolean;
@@ -172,6 +194,12 @@ declare namespace LocalJSX {
     interface APanel {
         "header"?: string;
         "open"?: boolean;
+    }
+    interface ATable {
+        "columns"?: { field: string, header: string, sortable?: boolean }[];
+        "data"?: any[];
+    }
+    interface ATag {
     }
     interface AToast {
         "message"?: {
@@ -193,6 +221,8 @@ declare namespace LocalJSX {
         "a-modal": AModal;
         "a-pagination": APagination;
         "a-panel": APanel;
+        "a-table": ATable;
+        "a-tag": ATag;
         "a-toast": AToast;
     }
 }
@@ -210,6 +240,8 @@ declare module "@stencil/core" {
             "a-modal": LocalJSX.AModal & JSXBase.HTMLAttributes<HTMLAModalElement>;
             "a-pagination": LocalJSX.APagination & JSXBase.HTMLAttributes<HTMLAPaginationElement>;
             "a-panel": LocalJSX.APanel & JSXBase.HTMLAttributes<HTMLAPanelElement>;
+            "a-table": LocalJSX.ATable & JSXBase.HTMLAttributes<HTMLATableElement>;
+            "a-tag": LocalJSX.ATag & JSXBase.HTMLAttributes<HTMLATagElement>;
             "a-toast": LocalJSX.AToast & JSXBase.HTMLAttributes<HTMLAToastElement>;
         }
     }

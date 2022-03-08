@@ -1,0 +1,15 @@
+:host {
+  --tag-font-size: .75rem;
+  --tag-background: #730bff;
+  --tag-color: white;
+  --tag-radius: .25rem;
+}
+
+.tag {
+  font-size: var(--tag-font-size) !important;
+  padding: .125rem .375rem;
+  background-color: var(--tag-background);
+  color: var(--tag-color);
+  display: inline-block;
+  border-radius: var(--tag-radius);
+}
