@@ -11,11 +11,20 @@
   <link rel="stylesheet" href="/build/alta.css" />
   <style>
     body {
-      padding: 3rem;
+      padding: 2rem;
       background-color: #eff3f8;
       background-color: white;
       max-width: 960px;
       margin: 0 auto;
+    }
+
+    .form {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .mt {
+      margin-top: 1rem;
     }
 
     hr {
@@ -35,10 +44,20 @@
 
 <body>
   <hr>
+  <h2>Alert</h2>
+  <a-alert type="info" class="mt">Some text</a-alert>
+  <a-alert type="danger" class="mt">Some text</a-alert>
+  <a-alert type="warning" dismissable="true" class="mt">Some text</a-alert>
+  <a-alert type="success" dismissable="true" class="mt">Some text</a-alert>
+  <hr>
   <h2>Avatar</h2>
-  <a-avatar label="M" size="l"></a-avatar>
-  <a-avatar label="M"></a-avatar>
-  <a-avatar label="M" size="s"></a-avatar>
+  <a-avatar label="Mat" size="l"></a-avatar>
+  <a-avatar label="Denise"></a-avatar>
+  <a-avatar label="Laura" size="s"></a-avatar>
+  <hr>
+  <a-avatar image="https://primefaces.org/primeng/assets/showcase/images/demo/avatar/amyelsner.png" size="l"></a-avatar>
+  <a-avatar image="https://primefaces.org/primeng/assets/showcase/images/demo/avatar/amyelsner.png"></a-avatar>
+  <a-avatar image="https://primefaces.org/primeng/assets/showcase/images/demo/avatar/amyelsner.png" size="s"></a-avatar>
   <hr>
   <h2>Breadcrumb</h2>
   <a-breadcrumb></a-breadcrumb>
@@ -49,14 +68,35 @@
   <a-button text="button" type="text"></a-button>
   <hr>
   <h2>Card</h2>
-  <hr>
   <a-card>
     <h3 slot="header">Card</h3>
     A basic card
   </a-card>
   <hr>
+  <h2>Carousel</h2>
+  <a-carousel style="aspect-ratio: 4/3;"></a-carousel>
+  <hr>
+  <h2>Divider</h2>
+  <a-divider></a-divider>
+  <a-divider position="left">some text</a-divider>
+  <a-divider position="center">some text</a-divider>
+  <a-divider position="right">some text</a-divider>
+  <hr>
+  <h2>Dropdown</h2>
+  <a-dropdown placeholder="select"></a-dropdown>
+  <hr>
+  <h2>Image</h2>
+  <a-img
+    preview="https://images.unsplash.com/photo-1646905064703-9e80a885f289?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
+    full="https://images.unsplash.com/photo-1646905064703-9e80a885f289?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80">
+  </a-img>
   <h2>Input</h2>
+  <h3>text</h3>
   <a-input type="text"></a-input>
+  <h3>checkbox</h3>
+  <a-input-checkbox></a-input-checkbox>
+  <h3>password</h3>
+  <a-input-password></a-input-password>
   <hr>
   <h2>List</h2>
   <a-list></a-list>
@@ -85,6 +125,25 @@
     aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </a-panel>
   <hr>
+  <h2>Progress</h2>
+  <a-progress value="76" start="0" end="100"></a-progress>
+  <hr>
+  <h2>Rating</h2>
+  <a-rating></a-rating>
+  <hr>
+  <h2>Table</h2>
+  <a-table scrollable="true"></a-table>
+  <hr>
+  <h2>Tabset</h2>
+  <a-tabset selected="0">
+    <a-tab header="Header 1" index="0">
+      <h3>First tab</h3>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat.
+    </a-tab>
+  </a-tabset>
+  <hr>
   <h2>Tag</h2>
   <a-tag>
     classic
@@ -92,9 +151,6 @@
   <a-tag class="custom-tag">
     🔥 custom
   </a-tag>
-  <hr>
-  <h2>Table</h2>
-  <a-table scrollable="true"></a-table>
   <hr>
   <h2>Toast</h2>
   <a-button id=toast type="outline" text="Show"></a-button>
@@ -104,11 +160,32 @@
 <script>
   // list
   document.querySelector('a-list').setAttribute('items', JSON.stringify(['do something', 'buy milk', 'call to info']));
+
+  // carousel
+  document.querySelector('a-carousel').images = [
+    'https://images.unsplash.com/photo-1646905064703-9e80a885f289?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
+    'https://images.unsplash.com/photo-1646909714273-348f3cfa6366?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+    'https://images.unsplash.com/photo-1646919797987-0adfa09578e9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=765&q=80'
+  ];
+
+
   document.querySelector('a-breadcrumb').setAttribute('items', JSON.stringify([
     { label: 'Home', value: '' },
     { label: 'Documents', value: 'docs' },
     { label: 'Detail', value: 'docs/12' }
   ]));
+
+
+  document.querySelectorAll('a-dropdown').forEach(element => {
+    element.setAttribute('options', JSON.stringify([
+      { label: 'Italy', value: 1 },
+      { label: 'France', value: 2 },
+      { label: 'Spain', value: 3 },
+      { label: 'England', value: 4 },
+      { label: 'Canada', value: 5 },
+      { label: 'Irland', value: 6 }
+    ]))
+  });
 
   // modal
   document.querySelector('a-input').addEventListener('valueChanged', (e) => console.log(e.detail));
@@ -128,56 +205,36 @@
 
 
   document.querySelector('a-table').columns = [
-    { field: 'field', header: 'header', sortable: true },
-    { field: 'field2', header: 'header2' },
-    { field: 'field3', header: 'header3' }
+    { field: 'id', header: 'Id', width: 100 },
+    { field: 'field2', header: 'Name', sortable: true, },
+    { field: 'field3', header: 'Surname' }
   ];
 
   document.querySelector('a-table').data = [
     {
-      field: 'pippo',
-      field2: 'pluto',
-      field3: 'paperino'
+      id: 1,
+      field2: 'Pippo',
+      field3: 'rossi'
     },
     {
-      field: 'second',
-      field2: 'row',
-      field3: 'rules'
+      id: 3,
+      field2: 'Paperino',
+      field3: 'rossi'
     },
     {
-      field: 'pippo',
-      field2: 'pluto',
-      field3: 'paperino'
+      id: 32,
+      field2: 'Mario',
+      field3: 'rossi'
     },
     {
-      field: 'second',
-      field2: 'row',
-      field3: 'rules'
+      id: 55,
+      field2: 'Gianni',
+      field3: 'rossi'
     },
     {
-      field: 'pippo',
-      field2: 'pluto',
-      field3: 'paperino'
-    },
-    {
-      field: 'second',
-      field2: 'row',
-      field3: 'rules'
-    },
-    {
-      field: 'pippo',
-      field2: 'pluto',
-      field3: 'paperino'
-    },
-    {
-      field: 'second',
-      field2: 'row',
-      field3: 'rules'
-    },
-    {
-      field: 'pippo',
-      field2: 'pluto',
-      field3: 'paperino'
+      id: 89,
+      field2: 'Marco',
+      field3: 'rossi'
     }]
 
 </script>

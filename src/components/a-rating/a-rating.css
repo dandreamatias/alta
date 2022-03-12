@@ -1,0 +1,26 @@
+:host {
+  display: inline-block;
+}
+
+div {
+  padding: 0.25rem;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.gg-shape-circle {
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 2px solid #cbcbcb;
+  border-radius: 1.25rem;
+  cursor: pointer;
+}
+
+.gg-shape-circle.selected {
+  background-color: var(--alta-primary-color);
+  border: 2px solid var(--alta-primary-color);
+}

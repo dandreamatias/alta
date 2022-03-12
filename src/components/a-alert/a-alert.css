@@ -1,0 +1,35 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:host {
+  display: block;
+}
+
+.message {
+  padding: 1rem 1.5rem;
+  border-radius: var(--alta-border-radius);
+  border: var(--alta-border);
+  display: block;
+}
+
+.message.warning {
+  background-color: var(--alta-warning-bg);
+  color: var(--alta-warning-color);
+}
+
+.message.danger {
+  background-color: var(--alta-danger-bg);
+  color: var(--alta-danger-color);
+}
+
+.message.success {
+  background-color: var(--alta-success-bg);
+  color: var(--alta-success-color);
+}
+
+.message.info {
+  background-color: #f3f3f3;
+}

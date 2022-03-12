@@ -10,6 +10,7 @@ export class AInput {
   @Prop({ reflect: true, mutable: true }) value: string;
   @Prop() type = 'text';
   @Event() valueChanged: EventEmitter<string>;
+  
   private onInputChangeValue(event: Event) {
     this.value = (event.target as HTMLInputElement).value;
     this.valueChanged.emit(this.value);

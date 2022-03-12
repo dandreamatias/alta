@@ -12,6 +12,7 @@ table {
   border-spacing: 0;
   border-radius: var(--alta-border-radius);
   width: 100%;
+  table-layout: fixed;
 }
 
 thead {
@@ -39,44 +40,103 @@ th {
   text-transform: uppercase;
 }
 
+th div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 td {
   font-size: 1rem;
   color: #666666;
 }
 
+.pointer {
+  cursor: pointer;
+}
 
 
 /* icons */
-.gg-sort-az,
-.gg-sort-az::after,
-.gg-sort-az::before {
+.gg-arrows-exchange {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 16px;
+  height: 14px
+ }
+
+ .gg-arrows-exchange::after,
+ .gg-arrows-exchange::before {
+  content: "";
   display: block;
   box-sizing: border-box;
+  position: absolute;
   height: 2px;
-  border-radius: 4px;
-  background: currentColor
-}
+  background: currentColor;
+  border-radius: 4px
+ }
 
-.gg-sort-az {
-  position: relative;
-  transform: scale(var(--ggs, 1));
-  width: 8px
-}
+ .gg-arrows-exchange::before {
+  width: 6px;
+  transform: rotate(45deg);
+  box-shadow: 2px -13px 0;
+  top: 10px
+ }
 
-.gg-sort-az::after,
-.gg-sort-az::before {
-  content: "";
-  position: absolute
-}
-
-.gg-sort-az::before {
+ .gg-arrows-exchange::after {
   width: 12px;
-  top: -4px;
-  left: -2px
-}
+  box-shadow: -4px 4px 0;
+  left: 4px;
+  top: 4px
+ }
 
-.gg-sort-az::after {
-  width: 4px;
-  top: 4px;
-  left: 2px
-}
+
+/* up */
+ .gg-chevron-up {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 100px
+ }
+
+ .gg-chevron-up::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(-45deg);
+  left: 4px;
+  bottom: 2px
+ }
+
+ /* down */
+ .gg-chevron-down {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 100px
+ }
+
+ .gg-chevron-down::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  left: 4px;
+  top: 2px
+ }
