@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  background-color: inherit;
+}
+.container {
+  width: 100%;
+  padding: 2rem 0;
+  display: flex;
+  align-items: center;
+  background-color: inherit;
+}
+
+.line {
+  height: 1px;
+  max-height: 1px;
+  border-bottom: 1px solid #e2e2e2;
+  display: flex;
+  width: 100%;
+  background-color: inherit;
+  align-items: center;
+} 
+span {
+  display: inline-block;
+  margin: 0 10%;
+  background-color: inherit;
+  padding: 0 .5rem;
+  font-size: .825rem;
+  color: #444;
+}
+
+.left {
+  justify-content: start;
+}
+
+.center {
+  justify-content: center;
+}
+
+.right {
+  justify-content: end;
+}

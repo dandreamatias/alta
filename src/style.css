@@ -1,13 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
 :root {
-    --alta-primary-color: #424242;
-    --alta-font-color: #424242;
+    --alta-primary-color: #073b4c;
+    --alta-font-color: #073b4c;
     --alta-border-radius: 0.25rem;
     --alta-border: 1px solid #dfdfdf;
     --alta-progress-value: #abe2bb;
     --alta-progress-background: #f3f3f3;
-    --alta-focus-color: #730bff70;
+    --alta-focus-color: #118ab2;
+
+    --alta-danger-bg: #ef6565;
+    --alta-danger-color: white;
+
+    --alta-success-bg: #06d6a0;
+    --alta-success-color: white;
+
+    --alta-warning-bg: #ffd36e;
+    --alta-warning-color: #444;
   }
   
   * {

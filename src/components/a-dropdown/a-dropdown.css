@@ -1,0 +1,154 @@
+:host {
+  display: inline-block;
+  --alta-dropdown-bg: white;
+  --alta-dropdown-color: #444;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown {
+  position: relative;
+  border-radius: var(--alta-border-radius);
+  border: var(--alta-border);
+  cursor: pointer;
+  background-color: var(--alta-dropdown-bg);
+  color: var(--alta-color-bg);
+  display: flex;
+  align-items: center;
+  min-width: 12rem;
+  height: 2.625rem;
+}
+
+.dropdown:focus-within {
+  box-shadow: 0 0 2px 1px var(--alta-focus-color);
+}
+
+
+button {
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 0 .75rem;
+  font-size: 1rem;
+  border-radius: var(--alta-border-radius);
+  color: inherit;
+  background-color: inherit;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: space-between;
+  margin: 0;
+  outline: none;
+}
+
+.list {
+  display: none;
+  list-style: none;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.list::-webkit-scrollbar {
+  width: .125rem;
+}
+
+/* Track */
+.list::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+/* Handle */
+.list::-webkit-scrollbar-thumb {
+  background: #dfdfdf;
+
+}
+
+li {
+  padding: 0.5rem;
+  border-bottom: 1px solid #fafafa;
+  display: flex;
+  color: #444;
+  justify-content: space-between;
+}
+
+.list li:hover {
+  background-color: #fafafa;
+}
+
+button:focus-within>.list {
+  display: block;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  max-height: 10rem;
+  top: calc(100% + .5rem);
+  left: 0;
+  border: var(--alta-border);
+  border-radius: var(--alta-border-radius);
+  box-shadow: rgba(99, 99, 99, 0.2) 0 2px 8px 0;
+}
+
+/* down */
+.gg-chevron-down {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 22px;
+  height: 22px;
+  border: 2px solid transparent;
+  border-radius: 100px
+}
+
+.gg-chevron-down::after {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-bottom: 2px solid var(--alta-dropdown-color);
+  border-right: 2px solid  var(--alta-dropdown-color);
+  transform: rotate(45deg);
+  left: 4px;
+  top: 2px
+}
+
+.gg-close-o {
+  box-sizing: border-box;
+  position: relative;
+  margin: 0 0 0 .5rem;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border: 1px solid transparent;
+  border-radius: 40px
+}
+
+.gg-close-o::after,
+.gg-close-o::before {
+  content: "";
+  display: block;
+  box-sizing: border-box;
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background: var(--alta-dropdown-color);
+  transform: rotate(45deg);
+  top: 8px;
+  left: 3px;
+}
+
+.gg-close-o::after {
+  transform: rotate(-45deg)
+}
+
+.empty {
+  font-style: italic;
+  color: #c6c6c6;
+}

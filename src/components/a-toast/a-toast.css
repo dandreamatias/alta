@@ -5,7 +5,7 @@
   border: var(--alta-border);
   background-color: white;
   display: block;
-  box-shadow: rgb(17 17 26 / 10%) 0px 8px 24px, rgb(17 17 26 / 10%) 0px 16px 56px, rgb(17 17 26 / 10%) 0px 24px 80px;
+  box-shadow: rgb(17 17 26 / 10%) 0 8px 24px, rgb(17 17 26 / 10%) 0 16px 56px, rgb(17 17 26 / 10%) 0 24px 80px;
   position: fixed;
   top: 2rem;
   right: 2rem;
@@ -38,20 +38,23 @@ h3 {
 }
 
 
-.toast.warn {
-  background-color: #fff9d4;
+.toast.warning {
+  background-color: var(--alta-warning-bg);
+  color: var(--alta-warning-color);
 }
 
-.toast.error {
-  background-color: #ffcbcb;
+.toast.danger {
+  background-color: var(--alta-danger-bg);
+  color: var(--alta-danger-color);
 }
 
 .toast.success {
-  background-color: #dafad7;
+  background-color: var(--alta-success-bg);
+  color: var(--alta-success-color);
 }
 
 .toast.info {
-  background-color: #ececec;
+  background-color: #f3f3f3;
 }
 
 .gg-close {
@@ -59,7 +62,6 @@ h3 {
   cursor: pointer;
   position: relative;
   display: block;
-  transform: scale(var(--ggs, 1));
   width: 22px;
   height: 22px;
   border: 2px solid transparent;

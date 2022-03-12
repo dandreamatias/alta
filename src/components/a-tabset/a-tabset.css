@@ -1,0 +1,38 @@
+:host {
+  display: block;
+}
+
+.tab {
+  display: flex;
+  border-bottom: var(--alta-border);
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.tab-section {
+  padding: 0.5rem 1.5rem 0.25rem 1.5rem;
+  border-top-left-radius: 0.25rem;
+  border: 1px solid transparent;
+  border-top-right-radius: 0.25rem;
+  margin-bottom: -1px;
+  cursor: pointer;
+}
+
+.tab-section.selected {
+  border: var(--alta-border);
+  border-bottom: 1px solid white;
+  background-color: white;
+}
+
+.content {
+  border: var(--alta-border);
+  margin-top: -1px;
+  padding: 1.5rem;
+  border-bottom-left-radius: 0.25rem;
+  border: var(--alta-border);
+  border-bottom-right-radius: 0.25rem;
+}
+
+.none {
+  display: none !important;
+}

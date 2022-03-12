@@ -5,13 +5,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  color: var(--alta-font-color);
-  font-weight: 400;
 }
 
 .button {
   text-transform: uppercase;
+  font-family: 'Poppins', sans-serif;
   height: 2.625rem;
   border: none;
   padding: 0 1.5rem;

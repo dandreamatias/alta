@@ -6,7 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AAlert {
+        "type": 'info' | 'success' | 'warning' | 'danger';
+    }
     interface AAvatar {
+        "image": any;
         "label": string;
         "size": string;
     }
@@ -19,12 +23,42 @@ export namespace Components {
     }
     interface ACard {
     }
+    interface ACarousel {
+        "images": string[];
+    }
+    interface ADivider {
+        "position": string;
+    }
+    interface ADropdown {
+        "label": string;
+        "options": any[] | string;
+        "placeholder": string;
+        "selected": any;
+        "showclear": boolean;
+        "value": string;
+    }
+    interface AImg {
+        "alt": any;
+        "full": string;
+        "preview": string;
+    }
     interface AInput {
         "label": string;
         "type": string;
         "value": string;
     }
+    interface AInputCheckbox {
+    }
+    interface AInputNumber {
+    }
     interface AInputPassword {
+        "value": string;
+    }
+    interface AInputRadio {
+    }
+    interface AInputText {
+    }
+    interface AInputUpload {
     }
     interface AList {
         "items": string[] | number[] | string;
@@ -44,9 +78,26 @@ export namespace Components {
         "header": string;
         "open": boolean;
     }
+    interface AProgress {
+        "end": number;
+        "percentage": boolean;
+        "start": number;
+        "value": number;
+    }
+    interface ARating {
+        "rate": number;
+        "stars": number;
+    }
+    interface ATab {
+        "header": string;
+        "index": string;
+    }
     interface ATable {
-        "columns": { field: string, header: string, sortable?: boolean }[];
+        "columns": { field: string, header: string, sortable?: boolean, width: number }[];
         "data": any[];
+    }
+    interface ATabset {
+        "selected": string;
     }
     interface ATag {
     }
@@ -61,6 +112,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAAlertElement extends Components.AAlert, HTMLStencilElement {
+    }
+    var HTMLAAlertElement: {
+        prototype: HTMLAAlertElement;
+        new (): HTMLAAlertElement;
+    };
     interface HTMLAAvatarElement extends Components.AAvatar, HTMLStencilElement {
     }
     var HTMLAAvatarElement: {
@@ -85,17 +142,71 @@ declare global {
         prototype: HTMLACardElement;
         new (): HTMLACardElement;
     };
+    interface HTMLACarouselElement extends Components.ACarousel, HTMLStencilElement {
+    }
+    var HTMLACarouselElement: {
+        prototype: HTMLACarouselElement;
+        new (): HTMLACarouselElement;
+    };
+    interface HTMLADividerElement extends Components.ADivider, HTMLStencilElement {
+    }
+    var HTMLADividerElement: {
+        prototype: HTMLADividerElement;
+        new (): HTMLADividerElement;
+    };
+    interface HTMLADropdownElement extends Components.ADropdown, HTMLStencilElement {
+    }
+    var HTMLADropdownElement: {
+        prototype: HTMLADropdownElement;
+        new (): HTMLADropdownElement;
+    };
+    interface HTMLAImgElement extends Components.AImg, HTMLStencilElement {
+    }
+    var HTMLAImgElement: {
+        prototype: HTMLAImgElement;
+        new (): HTMLAImgElement;
+    };
     interface HTMLAInputElement extends Components.AInput, HTMLStencilElement {
     }
     var HTMLAInputElement: {
         prototype: HTMLAInputElement;
         new (): HTMLAInputElement;
     };
+    interface HTMLAInputCheckboxElement extends Components.AInputCheckbox, HTMLStencilElement {
+    }
+    var HTMLAInputCheckboxElement: {
+        prototype: HTMLAInputCheckboxElement;
+        new (): HTMLAInputCheckboxElement;
+    };
+    interface HTMLAInputNumberElement extends Components.AInputNumber, HTMLStencilElement {
+    }
+    var HTMLAInputNumberElement: {
+        prototype: HTMLAInputNumberElement;
+        new (): HTMLAInputNumberElement;
+    };
     interface HTMLAInputPasswordElement extends Components.AInputPassword, HTMLStencilElement {
     }
     var HTMLAInputPasswordElement: {
         prototype: HTMLAInputPasswordElement;
         new (): HTMLAInputPasswordElement;
+    };
+    interface HTMLAInputRadioElement extends Components.AInputRadio, HTMLStencilElement {
+    }
+    var HTMLAInputRadioElement: {
+        prototype: HTMLAInputRadioElement;
+        new (): HTMLAInputRadioElement;
+    };
+    interface HTMLAInputTextElement extends Components.AInputText, HTMLStencilElement {
+    }
+    var HTMLAInputTextElement: {
+        prototype: HTMLAInputTextElement;
+        new (): HTMLAInputTextElement;
+    };
+    interface HTMLAInputUploadElement extends Components.AInputUpload, HTMLStencilElement {
+    }
+    var HTMLAInputUploadElement: {
+        prototype: HTMLAInputUploadElement;
+        new (): HTMLAInputUploadElement;
     };
     interface HTMLAListElement extends Components.AList, HTMLStencilElement {
     }
@@ -121,11 +232,35 @@ declare global {
         prototype: HTMLAPanelElement;
         new (): HTMLAPanelElement;
     };
+    interface HTMLAProgressElement extends Components.AProgress, HTMLStencilElement {
+    }
+    var HTMLAProgressElement: {
+        prototype: HTMLAProgressElement;
+        new (): HTMLAProgressElement;
+    };
+    interface HTMLARatingElement extends Components.ARating, HTMLStencilElement {
+    }
+    var HTMLARatingElement: {
+        prototype: HTMLARatingElement;
+        new (): HTMLARatingElement;
+    };
+    interface HTMLATabElement extends Components.ATab, HTMLStencilElement {
+    }
+    var HTMLATabElement: {
+        prototype: HTMLATabElement;
+        new (): HTMLATabElement;
+    };
     interface HTMLATableElement extends Components.ATable, HTMLStencilElement {
     }
     var HTMLATableElement: {
         prototype: HTMLATableElement;
         new (): HTMLATableElement;
+    };
+    interface HTMLATabsetElement extends Components.ATabset, HTMLStencilElement {
+    }
+    var HTMLATabsetElement: {
+        prototype: HTMLATabsetElement;
+        new (): HTMLATabsetElement;
     };
     interface HTMLATagElement extends Components.ATag, HTMLStencilElement {
     }
@@ -140,23 +275,41 @@ declare global {
         new (): HTMLAToastElement;
     };
     interface HTMLElementTagNameMap {
+        "a-alert": HTMLAAlertElement;
         "a-avatar": HTMLAAvatarElement;
         "a-breadcrumb": HTMLABreadcrumbElement;
         "a-button": HTMLAButtonElement;
         "a-card": HTMLACardElement;
+        "a-carousel": HTMLACarouselElement;
+        "a-divider": HTMLADividerElement;
+        "a-dropdown": HTMLADropdownElement;
+        "a-img": HTMLAImgElement;
         "a-input": HTMLAInputElement;
+        "a-input-checkbox": HTMLAInputCheckboxElement;
+        "a-input-number": HTMLAInputNumberElement;
         "a-input-password": HTMLAInputPasswordElement;
+        "a-input-radio": HTMLAInputRadioElement;
+        "a-input-text": HTMLAInputTextElement;
+        "a-input-upload": HTMLAInputUploadElement;
         "a-list": HTMLAListElement;
         "a-modal": HTMLAModalElement;
         "a-pagination": HTMLAPaginationElement;
         "a-panel": HTMLAPanelElement;
+        "a-progress": HTMLAProgressElement;
+        "a-rating": HTMLARatingElement;
+        "a-tab": HTMLATabElement;
         "a-table": HTMLATableElement;
+        "a-tabset": HTMLATabsetElement;
         "a-tag": HTMLATagElement;
         "a-toast": HTMLAToastElement;
     }
 }
 declare namespace LocalJSX {
+    interface AAlert {
+        "type"?: 'info' | 'success' | 'warning' | 'danger';
+    }
     interface AAvatar {
+        "image"?: any;
         "label"?: string;
         "size"?: string;
     }
@@ -169,13 +322,45 @@ declare namespace LocalJSX {
     }
     interface ACard {
     }
+    interface ACarousel {
+        "images"?: string[];
+    }
+    interface ADivider {
+        "position"?: string;
+    }
+    interface ADropdown {
+        "label"?: string;
+        "onSelectChanged"?: (event: CustomEvent<string>) => void;
+        "options"?: any[] | string;
+        "placeholder"?: string;
+        "selected"?: any;
+        "showclear"?: boolean;
+        "value"?: string;
+    }
+    interface AImg {
+        "alt"?: any;
+        "full"?: string;
+        "preview"?: string;
+    }
     interface AInput {
         "label"?: string;
         "onValueChanged"?: (event: CustomEvent<string>) => void;
         "type"?: string;
         "value"?: string;
     }
+    interface AInputCheckbox {
+    }
+    interface AInputNumber {
+    }
     interface AInputPassword {
+        "onValueChanged"?: (event: CustomEvent<string>) => void;
+        "value"?: string;
+    }
+    interface AInputRadio {
+    }
+    interface AInputText {
+    }
+    interface AInputUpload {
     }
     interface AList {
         "items"?: string[] | number[] | string;
@@ -195,9 +380,26 @@ declare namespace LocalJSX {
         "header"?: string;
         "open"?: boolean;
     }
+    interface AProgress {
+        "end"?: number;
+        "percentage"?: boolean;
+        "start"?: number;
+        "value"?: number;
+    }
+    interface ARating {
+        "rate"?: number;
+        "stars"?: number;
+    }
+    interface ATab {
+        "header"?: string;
+        "index"?: string;
+    }
     interface ATable {
-        "columns"?: { field: string, header: string, sortable?: boolean }[];
+        "columns"?: { field: string, header: string, sortable?: boolean, width: number }[];
         "data"?: any[];
+    }
+    interface ATabset {
+        "selected"?: string;
     }
     interface ATag {
     }
@@ -211,17 +413,31 @@ declare namespace LocalJSX {
   };
     }
     interface IntrinsicElements {
+        "a-alert": AAlert;
         "a-avatar": AAvatar;
         "a-breadcrumb": ABreadcrumb;
         "a-button": AButton;
         "a-card": ACard;
+        "a-carousel": ACarousel;
+        "a-divider": ADivider;
+        "a-dropdown": ADropdown;
+        "a-img": AImg;
         "a-input": AInput;
+        "a-input-checkbox": AInputCheckbox;
+        "a-input-number": AInputNumber;
         "a-input-password": AInputPassword;
+        "a-input-radio": AInputRadio;
+        "a-input-text": AInputText;
+        "a-input-upload": AInputUpload;
         "a-list": AList;
         "a-modal": AModal;
         "a-pagination": APagination;
         "a-panel": APanel;
+        "a-progress": AProgress;
+        "a-rating": ARating;
+        "a-tab": ATab;
         "a-table": ATable;
+        "a-tabset": ATabset;
         "a-tag": ATag;
         "a-toast": AToast;
     }
@@ -230,17 +446,31 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "a-alert": LocalJSX.AAlert & JSXBase.HTMLAttributes<HTMLAAlertElement>;
             "a-avatar": LocalJSX.AAvatar & JSXBase.HTMLAttributes<HTMLAAvatarElement>;
             "a-breadcrumb": LocalJSX.ABreadcrumb & JSXBase.HTMLAttributes<HTMLABreadcrumbElement>;
             "a-button": LocalJSX.AButton & JSXBase.HTMLAttributes<HTMLAButtonElement>;
             "a-card": LocalJSX.ACard & JSXBase.HTMLAttributes<HTMLACardElement>;
+            "a-carousel": LocalJSX.ACarousel & JSXBase.HTMLAttributes<HTMLACarouselElement>;
+            "a-divider": LocalJSX.ADivider & JSXBase.HTMLAttributes<HTMLADividerElement>;
+            "a-dropdown": LocalJSX.ADropdown & JSXBase.HTMLAttributes<HTMLADropdownElement>;
+            "a-img": LocalJSX.AImg & JSXBase.HTMLAttributes<HTMLAImgElement>;
             "a-input": LocalJSX.AInput & JSXBase.HTMLAttributes<HTMLAInputElement>;
+            "a-input-checkbox": LocalJSX.AInputCheckbox & JSXBase.HTMLAttributes<HTMLAInputCheckboxElement>;
+            "a-input-number": LocalJSX.AInputNumber & JSXBase.HTMLAttributes<HTMLAInputNumberElement>;
             "a-input-password": LocalJSX.AInputPassword & JSXBase.HTMLAttributes<HTMLAInputPasswordElement>;
+            "a-input-radio": LocalJSX.AInputRadio & JSXBase.HTMLAttributes<HTMLAInputRadioElement>;
+            "a-input-text": LocalJSX.AInputText & JSXBase.HTMLAttributes<HTMLAInputTextElement>;
+            "a-input-upload": LocalJSX.AInputUpload & JSXBase.HTMLAttributes<HTMLAInputUploadElement>;
             "a-list": LocalJSX.AList & JSXBase.HTMLAttributes<HTMLAListElement>;
             "a-modal": LocalJSX.AModal & JSXBase.HTMLAttributes<HTMLAModalElement>;
             "a-pagination": LocalJSX.APagination & JSXBase.HTMLAttributes<HTMLAPaginationElement>;
             "a-panel": LocalJSX.APanel & JSXBase.HTMLAttributes<HTMLAPanelElement>;
+            "a-progress": LocalJSX.AProgress & JSXBase.HTMLAttributes<HTMLAProgressElement>;
+            "a-rating": LocalJSX.ARating & JSXBase.HTMLAttributes<HTMLARatingElement>;
+            "a-tab": LocalJSX.ATab & JSXBase.HTMLAttributes<HTMLATabElement>;
             "a-table": LocalJSX.ATable & JSXBase.HTMLAttributes<HTMLATableElement>;
+            "a-tabset": LocalJSX.ATabset & JSXBase.HTMLAttributes<HTMLATabsetElement>;
             "a-tag": LocalJSX.ATag & JSXBase.HTMLAttributes<HTMLATagElement>;
             "a-toast": LocalJSX.AToast & JSXBase.HTMLAttributes<HTMLAToastElement>;
         }
