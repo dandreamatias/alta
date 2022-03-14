@@ -15,7 +15,7 @@ export class ADropdown {
   @Event() selectChanged: EventEmitter<string>;
   _items = [];
 
-  @Watch('items')
+  @Watch('options')
   arrayDataWatcher(newValue: string[] | number[] | string) {
     if (typeof newValue === 'string') {
       this._items = JSON.parse(newValue);

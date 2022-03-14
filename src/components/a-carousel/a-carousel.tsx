@@ -15,9 +15,9 @@ export class ACarousel {
         <div class='btn' onClick={() => { if (this.index > 0) this.index-- }}>
           <i class="gg-chevron-left"></i>
         </div>
-        <div  class='btn' onClick={() => { 
+        <div  class='btn' onClick={() => {
             if (this.index < this.images.length - 1) {
-              this.index++ 
+              this.index++
             } else {
               this.index = 0
             }
@@ -25,7 +25,7 @@ export class ACarousel {
           <i class="gg-chevron-right" ></i>
         </div>
         <div class='position'>
-          {this.images.map((im, index) => <div onClick={() => this.index = index} class={{current: index === this.index}}></div>)}
+          {this.images.map((_, index) => <div onClick={() => this.index = index} class={{current: index === this.index}}></div>)}
           </div>
       </div>
     );

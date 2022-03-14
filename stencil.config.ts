@@ -1,7 +1,7 @@
 import { Config } from '@stencil/core';
 
 export const config: Config = {
-  namespace: 'alta',
+  namespace: 'alta-ui',
   globalStyle: 'src/style.css',
   outputTargets: [
     {
