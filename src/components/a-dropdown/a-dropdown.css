@@ -2,6 +2,8 @@
   display: inline-block;
   --alta-dropdown-bg: white;
   --alta-dropdown-color: #444;
+  --dropdown-min-width: 12rem;
+  --dropdown-option-padding: .5rem;
 }
 
 * {
@@ -16,10 +18,10 @@
   border: var(--alta-border);
   cursor: pointer;
   background-color: var(--alta-dropdown-bg);
-  color: var(--alta-color-bg);
+  color: var(--alta-dropdown-color);
   display: flex;
   align-items: center;
-  min-width: 12rem;
+  min-width: var(--dropdown-min-width);
   height: 2.625rem;
 }
 
@@ -70,7 +72,7 @@ button {
 }
 
 li {
-  padding: 0.5rem;
+  padding: var(--dropdown-option-padding);
   border-bottom: 1px solid #fafafa;
   display: flex;
   color: #444;
@@ -81,7 +83,7 @@ li {
   background-color: #fafafa;
 }
 
-button:focus-within>.list {
+button:focus-within > .list {
   display: block;
   width: 100%;
   position: absolute;
@@ -113,7 +115,7 @@ button:focus-within>.list {
   width: 10px;
   height: 10px;
   border-bottom: 2px solid var(--alta-dropdown-color);
-  border-right: 2px solid  var(--alta-dropdown-color);
+  border-right: 2px solid var(--alta-dropdown-color);
   transform: rotate(45deg);
   left: 4px;
   top: 2px
@@ -146,9 +148,4 @@ button:focus-within>.list {
 
 .gg-close-o::after {
   transform: rotate(-45deg)
-}
-
-.empty {
-  font-style: italic;
-  color: #c6c6c6;
 }

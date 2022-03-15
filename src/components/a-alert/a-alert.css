@@ -6,13 +6,16 @@
 
 :host {
   display: block;
+  --padding: 1rem 1.5rem;
+  --default-bg: white;
 }
 
 .message {
-  padding: 1rem 1.5rem;
+  padding: var(--padding);
   border-radius: var(--alta-border-radius);
   border: var(--alta-border);
   display: block;
+  background-color: var(--default-bg);
 }
 
 .message.warning {
