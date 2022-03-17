@@ -1,4 +1,4 @@
-import { Component, Host, h, Prop, Watch } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'a-modal',
@@ -6,20 +6,19 @@ import { Component, Host, h, Prop, Watch } from '@stencil/core';
   shadow: true,
 })
 export class AModal {
-  @Prop() visible: boolean;
-  @Watch('visible')
+  @Prop({ reflect: true }) visible: boolean;
 
   render() {
     return (
       <Host>
         <div class={{ wrapper: true, show: this.visible }}>
-          <div class="modal">
+          <div class='modal'>
             <div class='header'>
-              <slot name="header"></slot>
+              <slot name='header'></slot>
             </div>
-            <slot name="body"></slot>
-            <div class="footer">
-              <slot name="footer"></slot>
+            <slot name='body'></slot>
+            <div class='footer'>
+              <slot name='footer'></slot>
             </div>
           </div>
         </div>

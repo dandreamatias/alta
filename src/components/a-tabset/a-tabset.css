@@ -1,5 +1,12 @@
 :host {
   display: block;
+  --tab-font-size: 1rem;
+  --tab-padding: 0.75rem 1.5rem 0.5rem;
+  --tabs-background-color: white;
+  --selected-border-bottom: 1px solid var(--tabs-background-color);
+  --tab-selected-color: black;
+  --tab-color: #888;
+  --tab-content-padding: 1.5rem;
 }
 
 .tab {
@@ -10,27 +17,30 @@
 }
 
 .tab-section {
-  padding: 0.5rem 1.5rem 0.25rem 1.5rem;
-  border-top-left-radius: 0.25rem;
+  padding: var(--tab-padding);
+  border-top-left-radius: var(--alta-border-radius);
   border: 1px solid transparent;
-  border-top-right-radius: 0.25rem;
+  border-top-right-radius: var(--alta-border-radius);
   margin-bottom: -1px;
   cursor: pointer;
+  color: var(--tab-color);
+  font-size: var(--tab-font-size);
 }
 
 .tab-section.selected {
   border: var(--alta-border);
-  border-bottom: 1px solid white;
-  background-color: white;
+  color: var(--tab-selected-color);
+  border-bottom: var(--selected-border-bottom);
+  background-color: var(--tabs-background-color);
 }
 
 .content {
   border: var(--alta-border);
   margin-top: -1px;
-  padding: 1.5rem;
-  border-bottom-left-radius: 0.25rem;
-  border: var(--alta-border);
-  border-bottom-right-radius: 0.25rem;
+  padding: var(--tab-content-padding);
+  border-bottom-left-radius: var(--alta-border-radius);
+  border-bottom-right-radius: var(--alta-border-radius);
+  background-color: var(--tabs-background-color);
 }
 
 .none {

@@ -11,7 +11,7 @@ export class ARating {
 
   buildRating() {
     const arr = new Array(this.stars).fill(false).map((_el, i) => (i <= this.rate));
-    return arr.map((s, i) => <i onClick={() => this.rate = i} class={"gg-shape-circle " + (s ? 'selected' : '')} ></i>)
+    return arr.map((s, i) => <i onClick={() => this.rate = i} class={'gg-shape-circle ' + (s ? 'selected' : '')} />)
   }
 
   render() {

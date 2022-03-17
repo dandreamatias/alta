@@ -1,5 +1,8 @@
 :host {
   display: block;
+  --table-background-color: white;
+  --table-head-background: #f3f3f3;
+  --table-cell-padding: 0.5rem;
 }
 
 * {
@@ -11,18 +14,19 @@ table {
   overflow: hidden;
   border-spacing: 0;
   border-radius: var(--alta-border-radius);
+  background-color: var(--table-background-color);
   width: 100%;
   table-layout: fixed;
 }
 
 thead {
-  background-color: #f3f3f3;
+  background-color: var(--table-head-background);
 }
 
 th,
 td {
   text-align: left;
-  padding: 0.5rem;
+  padding: var(--table-cell-padding);
   border-right: var(--alta-border);
   border-bottom: var(--alta-border);
 }
