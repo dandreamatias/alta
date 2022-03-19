@@ -19,7 +19,6 @@ export class ATabset {
   };
 
   render() {
-    { console.log(this.tabs, this.selected) }
     return (
       <Host>
         <div class="tab">
