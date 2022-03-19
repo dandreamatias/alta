@@ -6,6 +6,13 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AAccordion {
+        "selected": any;
+    }
+    interface AAccordionTab {
+        "header": string;
+        "index": number;
+    }
     interface AAlert {
         "type": 'info' | 'success' | 'warning' | 'danger';
     }
@@ -112,6 +119,18 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAAccordionElement extends Components.AAccordion, HTMLStencilElement {
+    }
+    var HTMLAAccordionElement: {
+        prototype: HTMLAAccordionElement;
+        new (): HTMLAAccordionElement;
+    };
+    interface HTMLAAccordionTabElement extends Components.AAccordionTab, HTMLStencilElement {
+    }
+    var HTMLAAccordionTabElement: {
+        prototype: HTMLAAccordionTabElement;
+        new (): HTMLAAccordionTabElement;
+    };
     interface HTMLAAlertElement extends Components.AAlert, HTMLStencilElement {
     }
     var HTMLAAlertElement: {
@@ -275,6 +294,8 @@ declare global {
         new (): HTMLAToastElement;
     };
     interface HTMLElementTagNameMap {
+        "a-accordion": HTMLAAccordionElement;
+        "a-accordion-tab": HTMLAAccordionTabElement;
         "a-alert": HTMLAAlertElement;
         "a-avatar": HTMLAAvatarElement;
         "a-breadcrumb": HTMLABreadcrumbElement;
@@ -305,6 +326,13 @@ declare global {
     }
 }
 declare namespace LocalJSX {
+    interface AAccordion {
+        "selected"?: any;
+    }
+    interface AAccordionTab {
+        "header"?: string;
+        "index"?: number;
+    }
     interface AAlert {
         "type"?: 'info' | 'success' | 'warning' | 'danger';
     }
@@ -413,6 +441,8 @@ declare namespace LocalJSX {
   };
     }
     interface IntrinsicElements {
+        "a-accordion": AAccordion;
+        "a-accordion-tab": AAccordionTab;
         "a-alert": AAlert;
         "a-avatar": AAvatar;
         "a-breadcrumb": ABreadcrumb;
@@ -446,6 +476,8 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "a-accordion": LocalJSX.AAccordion & JSXBase.HTMLAttributes<HTMLAAccordionElement>;
+            "a-accordion-tab": LocalJSX.AAccordionTab & JSXBase.HTMLAttributes<HTMLAAccordionTabElement>;
             "a-alert": LocalJSX.AAlert & JSXBase.HTMLAttributes<HTMLAAlertElement>;
             "a-avatar": LocalJSX.AAvatar & JSXBase.HTMLAttributes<HTMLAAvatarElement>;
             "a-breadcrumb": LocalJSX.ABreadcrumb & JSXBase.HTMLAttributes<HTMLABreadcrumbElement>;

@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+:host {
+  border: 1px solid #686868;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  background-color: white;
+  display: block;
+}
+
+.header {
+  background-color: #e3e3e3;
+  cursor: pointer;
+  padding: 0.5rem .75rem;
+  font-size: 1.125rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
