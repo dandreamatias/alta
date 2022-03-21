@@ -1,16 +1,25 @@
 * {
   box-sizing: border-box;
 }
+
 :host {
-  border: 1px solid #686868;
+  border: var(--alta-border);
   border-radius: 0.25rem;
   overflow: hidden;
   background-color: white;
   display: block;
 }
 
+:host > div {
+  border-top: var(--alta-border);
+}
+
+:host > div:nth-child(2) {
+  border-top: 0 solid transparent;
+}
+
 .header {
-  background-color: #e3e3e3;
+  background-color: #f3f3f3;
   cursor: pointer;
   padding: 0.5rem .75rem;
   font-size: 1.125rem;

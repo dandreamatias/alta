@@ -72,6 +72,9 @@ export namespace Components {
         "label": string;
         "selectable": boolean;
     }
+    interface ALoader {
+        "type": string;
+    }
     interface AModal {
         "visible": boolean;
     }
@@ -233,6 +236,12 @@ declare global {
         prototype: HTMLAListElement;
         new (): HTMLAListElement;
     };
+    interface HTMLALoaderElement extends Components.ALoader, HTMLStencilElement {
+    }
+    var HTMLALoaderElement: {
+        prototype: HTMLALoaderElement;
+        new (): HTMLALoaderElement;
+    };
     interface HTMLAModalElement extends Components.AModal, HTMLStencilElement {
     }
     var HTMLAModalElement: {
@@ -313,6 +322,7 @@ declare global {
         "a-input-text": HTMLAInputTextElement;
         "a-input-upload": HTMLAInputUploadElement;
         "a-list": HTMLAListElement;
+        "a-loader": HTMLALoaderElement;
         "a-modal": HTMLAModalElement;
         "a-pagination": HTMLAPaginationElement;
         "a-panel": HTMLAPanelElement;
@@ -395,6 +405,9 @@ declare namespace LocalJSX {
         "label"?: string;
         "selectable"?: boolean;
     }
+    interface ALoader {
+        "type"?: string;
+    }
     interface AModal {
         "visible"?: boolean;
     }
@@ -460,6 +473,7 @@ declare namespace LocalJSX {
         "a-input-text": AInputText;
         "a-input-upload": AInputUpload;
         "a-list": AList;
+        "a-loader": ALoader;
         "a-modal": AModal;
         "a-pagination": APagination;
         "a-panel": APanel;
@@ -495,6 +509,7 @@ declare module "@stencil/core" {
             "a-input-text": LocalJSX.AInputText & JSXBase.HTMLAttributes<HTMLAInputTextElement>;
             "a-input-upload": LocalJSX.AInputUpload & JSXBase.HTMLAttributes<HTMLAInputUploadElement>;
             "a-list": LocalJSX.AList & JSXBase.HTMLAttributes<HTMLAListElement>;
+            "a-loader": LocalJSX.ALoader & JSXBase.HTMLAttributes<HTMLALoaderElement>;
             "a-modal": LocalJSX.AModal & JSXBase.HTMLAttributes<HTMLAModalElement>;
             "a-pagination": LocalJSX.APagination & JSXBase.HTMLAttributes<HTMLAPaginationElement>;
             "a-panel": LocalJSX.APanel & JSXBase.HTMLAttributes<HTMLAPanelElement>;
