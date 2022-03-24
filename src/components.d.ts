@@ -28,6 +28,8 @@ export namespace Components {
         "text": string;
         "type": 'text' | 'outline';
     }
+    interface AButtonGroup {
+    }
     interface ACard {
     }
     interface ACarousel {
@@ -157,6 +159,12 @@ declare global {
     var HTMLAButtonElement: {
         prototype: HTMLAButtonElement;
         new (): HTMLAButtonElement;
+    };
+    interface HTMLAButtonGroupElement extends Components.AButtonGroup, HTMLStencilElement {
+    }
+    var HTMLAButtonGroupElement: {
+        prototype: HTMLAButtonGroupElement;
+        new (): HTMLAButtonGroupElement;
     };
     interface HTMLACardElement extends Components.ACard, HTMLStencilElement {
     }
@@ -309,6 +317,7 @@ declare global {
         "a-avatar": HTMLAAvatarElement;
         "a-breadcrumb": HTMLABreadcrumbElement;
         "a-button": HTMLAButtonElement;
+        "a-button-group": HTMLAButtonGroupElement;
         "a-card": HTMLACardElement;
         "a-carousel": HTMLACarouselElement;
         "a-divider": HTMLADividerElement;
@@ -357,6 +366,8 @@ declare namespace LocalJSX {
     interface AButton {
         "text"?: string;
         "type"?: 'text' | 'outline';
+    }
+    interface AButtonGroup {
     }
     interface ACard {
     }
@@ -460,6 +471,7 @@ declare namespace LocalJSX {
         "a-avatar": AAvatar;
         "a-breadcrumb": ABreadcrumb;
         "a-button": AButton;
+        "a-button-group": AButtonGroup;
         "a-card": ACard;
         "a-carousel": ACarousel;
         "a-divider": ADivider;
@@ -496,6 +508,7 @@ declare module "@stencil/core" {
             "a-avatar": LocalJSX.AAvatar & JSXBase.HTMLAttributes<HTMLAAvatarElement>;
             "a-breadcrumb": LocalJSX.ABreadcrumb & JSXBase.HTMLAttributes<HTMLABreadcrumbElement>;
             "a-button": LocalJSX.AButton & JSXBase.HTMLAttributes<HTMLAButtonElement>;
+            "a-button-group": LocalJSX.AButtonGroup & JSXBase.HTMLAttributes<HTMLAButtonGroupElement>;
             "a-card": LocalJSX.ACard & JSXBase.HTMLAttributes<HTMLACardElement>;
             "a-carousel": LocalJSX.ACarousel & JSXBase.HTMLAttributes<HTMLACarouselElement>;
             "a-divider": LocalJSX.ADivider & JSXBase.HTMLAttributes<HTMLADividerElement>;
